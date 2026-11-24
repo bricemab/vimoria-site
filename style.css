@@ -1,0 +1,80 @@
+:root{
+  --bg:#F6F0E6;--surface:#FFFCF6;--sunk:#EFE7DA;--line:#E3DACB;
+  --ink:#2E2A24;--ink-2:#5A5448;--mute:#665F53;
+  --deep:#3B4838;--on-deep:#F3F1E8;--sage:#84957A;--sage-l:#E4E9DC;--sage-ink:#5C6E52;
+  --rose:#D7A496;--rose-l:#F4E3DC;--rose-ink:#94584A;
+  --f-title:'Gloock',Georgia,serif;--f-text:'Manrope',ui-sans-serif,system-ui,sans-serif;--f-voice:'Instrument Serif',Georgia,serif;
+  --r-m:16px;--r-l:22px;--sh:0 1px 0 rgba(46,42,36,.04),0 14px 34px -20px rgba(59,72,56,.38);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--f-text)}
+a{color:var(--deep);text-underline-offset:3px}
+a:hover{color:var(--rose-ink)}
+img,svg{display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.narrow{max-width:760px}
+
+/* En-tête */
+.top{position:sticky;top:0;z-index:5;background:rgba(246,240,230,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.wm{display:inline-flex;align-items:baseline;font:400 28px/1 var(--f-title);color:var(--ink);text-decoration:none;white-space:nowrap}
+.wm svg{width:.739em;height:.755em;color:var(--deep)}
+.top nav{display:flex;gap:22px;font-weight:600;font-size:15px}
+.top nav a{color:var(--ink-2);text-decoration:none}
+.top nav a:hover{color:var(--deep)}
+
+/* Accueil */
+.hero{padding:72px 0 56px}
+.tag{display:inline-block;background:var(--rose-l);color:var(--rose-ink);font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+h1{font:400 clamp(36px,6vw,60px)/1.08 var(--f-title);margin:18px 0 18px;color:var(--ink)}
+h1 em{font-style:normal;color:var(--deep)}
+.lead{font-size:20px;color:var(--ink-2);max-width:640px;margin:0}
+.voice{font:italic 400 24px/1.4 var(--f-voice);color:var(--sage-ink)}
+section{padding:44px 0}
+h2{font:400 clamp(28px,4vw,38px)/1.15 var(--f-title);margin:0 0 18px}
+h3{font:700 18px/1.35 var(--f-text);margin:0 0 6px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-l);padding:24px;box-shadow:var(--sh)}
+.card p{margin:0;color:var(--ink-2);font-size:16px}
+.num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--sage-l);color:var(--sage-ink);font-weight:800;margin-bottom:12px}
+.deep{background:var(--deep);color:var(--on-deep);border-radius:var(--r-l);padding:36px}
+.deep h2,.deep h3{color:var(--on-deep)}
+.deep p,.deep li{color:#DCE0D4}
+.deep a{color:var(--on-deep)}
+table.prices{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-m);overflow:hidden;font-size:16px}
+.prices th,.prices td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+.prices th{background:var(--sunk);font-weight:700;font-size:14px;color:var(--ink-2)}
+.prices td.p{white-space:nowrap;font-weight:700}
+.prices tr:last-child td{border-bottom:0}
+.note{font-size:15px;color:var(--mute)}
+ul.check{list-style:none;padding:0;margin:0}
+ul.check li{padding-left:28px;position:relative;margin:8px 0}
+ul.check li::before{content:"";position:absolute;left:4px;top:.55em;width:10px;height:10px;border-radius:50% 0 50% 50%;background:var(--rose);transform:rotate(-45deg)}
+
+/* Pages de texte */
+.doc{padding:48px 0 64px}
+.doc h1{font-size:clamp(32px,5vw,46px)}
+.doc h2{font-size:26px;margin:40px 0 12px}
+.doc h3{margin:24px 0 6px}
+.doc p,.doc li{color:var(--ink-2)}
+.doc .brief{background:var(--sage-l);border-radius:var(--r-m);padding:18px 22px;margin:24px 0}
+.doc .brief li{color:var(--ink)}
+.doc .meta{color:var(--mute);font-size:15px}
+.addr{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-m);padding:18px 22px;font-style:normal}
+
+/* Pied */
+footer{border-top:1px solid var(--line);margin-top:40px;padding:32px 0 48px;font-size:15px;color:var(--mute)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+footer a{color:var(--ink-2)}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .top nav{gap:14px;font-size:14px}
+  .top nav .hide-s{display:none}
+  .hero{padding:44px 0 32px}
+  .lead{font-size:18px}
+  .deep{padding:24px}
+  .prices th,.prices td{padding:12px}
+}
